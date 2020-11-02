@@ -27,7 +27,7 @@ Add the following to your `~/.config/manifest-tool/projects/default.env`
 ```
 ssh localhost create_pr_repo ${remote_name}/${project_name} </dev/null
 GIT_DIR="$(basename -s .git ${project_name}).git" git remote add mine ssh://localhost/~/${remote_name}/${project_name}
-GIT_DIR="$(basename -s .git ${project_name}).git" git push mine --mirror
+GIT_DIR="$(basename -s .git ${project_name}).git" git push --all mine
 ```
 
 Rather than performing a checkout into a work tree, `--mirror` will just download the repositories.  We use manifest-tool to:
