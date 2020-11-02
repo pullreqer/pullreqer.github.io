@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Multi repository - Pull Reqer guide</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="client.html"><strong aria-hidden="true">2.</strong> Client components</a></li><li class="chapter-item expanded "><a href="server.html"><strong aria-hidden="true">3.</strong> Server components</a></li><li class="chapter-item expanded "><a href="container.html"><strong aria-hidden="true">4.</strong> Container</a></li><li class="chapter-item expanded "><a href="install.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li class="chapter-item expanded "><a href="single-repo.html"><strong aria-hidden="true">6.</strong> Single repository</a></li><li class="chapter-item expanded "><a href="multi-repo.html" class="active"><strong aria-hidden="true">7.</strong> Multi repository</a></li><li class="chapter-item expanded "><a href="containerbuild.html"><strong aria-hidden="true">8.</strong> Container build process</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Pull Reqer guide</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#multi-repository" id="multi-repository">Multi repository</a></h1>
+<p>After successfully testing everything works with a single repository
+we'll mirror a <code>repo</code> manifest, and set up a mirror so that our pull-requests will go our local system.</p>
+<p>It is best to do this on a repository with <em>no review url</em>  to ensure that you aren't accidentally sending bogus pull-requests upstream.</p>
+<hr />
+<p>mirroring a multi-repository <code>repo</code> checkout</p>
+<p>Has a few steps,</p>
+<ol>
+<li>Setting up a local mirror 
+<ul>
+<li>Download the repositories <code>git repo</code> using the <code>--mirror</code> flag.</li>
+<li>Create repositories for these on our local server</li>
+<li>Push the downloaded repositories to our local server</li>
+</ul>
+</li>
+<li>Using the local mirror with <code>git repo</code>
+<ul>
+<li>Repo init the repository again <em>without</em> the <code>--mirror</code> flag.</li>
+<li>Make a modified manifest, putting that in the <code>local_manifests</code> directory.</li>
+<li>Use <code>git repo sync</code> to make a clone which fetches and pulls from out local repository.</li>
+</ul>
+</li>
+<li>Using <code>git repo upload</code>, to make changes
+<code>manifest-tool</code> is a tool which helps with the above steps <em>2</em> and <em>4</em>.</li>
+</ol>
+<h1><a class="header" href="#configuring-manifest-tool-for-step-1" id="configuring-manifest-tool-for-step-1">Configuring manifest-tool for step 1.</a></h1>
+<p>Add the following to your <code>~/.config/manifest-tool/projects/default.env</code></p>
+<pre><code>ssh localhost create_pr_repo ${remote_name}/${project_name} &lt;/dev/null
+GIT_DIR=&quot;$(basename -s .git ${project_name}).git&quot; git remote add mine ssh://localhost/~/${remote_name}/${project_name}
+GIT_DIR=&quot;$(basename -s .git ${project_name}).git&quot; git push mine --mirror
+</code></pre>
+<p>Rather than performing a checkout into a work tree, <code>--mirror</code> will just download the repositories.  We use manifest-tool to:</p>
+<ul>
+<li>Create a repo for the local mirror</li>
+<li>Add a remote the cloned repository <code>git repo</code></li>
+<li>Push the repository to our mirror.</li>
+</ul>
+<p>We want to run this for every <em>project</em> in the manifest.</p>
+<h1><a class="header" href="#step-1" id="step-1">Step 1</a></h1>
+<p>Setting up a local mirror:</p>
+<pre><code>mkdir mirror
+cd mirror
+git repo init -u https://example.com/foo/example.git --mirror
+git repo sync
+manifest-tool --projects | sh
+</code></pre>
+<h1><a class="header" href="#configuring-manifest-tool-for-step-2" id="configuring-manifest-tool-for-step-2">Configuring manifest-tool for step 2.</a></h1>
+<p>Add the following to <code>~/.config/manifest-tool/convert/default.env</code></p>
+<pre><code>push_url=ssh://localhost/~git/${remote_name}/
+review_url=ssh://localhost/~/
+fetch_url=ssh://localhost/~git/${remote_name}/
+review_proto=agit
+</code></pre>
+<p>Unlike <code>--projects</code> which just emitted a shell script,
+the <code>--convert</code> flag, reads the manifest performs substitutions,
+and then writes a new manifest to the <code>local_manifests</code> directory.</p>
+<p>We run manifest tool in between <code>git repo init</code>, and <code>git repo sync</code>.  In the process <code>git repo sync</code> should now be checking out from and pushing to localhost.</p>
+<h1><a class="header" href="#step-2" id="step-2">Step 2</a></h1>
+<p>Using the local mirror with <code>git repo</code>:</p>
+<pre><code>mkdir work
+cd work
+git repo init -u https://example.com/foo/example.git
+manifest-tool --convert
+git repo sync
+</code></pre>
+<h1><a class="header" href="#step-3" id="step-3">Step 3</a></h1>
+<p>Using <code>git repo upload</code>, to make changes:</p>
+<pre><code>cd test/
+git repo start pull-test
+echo &quot;test&quot; &gt; test.txt
+git add test.txt
+git commit -m &quot;test commit for multi-repo&quot;
+git repo upload
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="single-repo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="containerbuild.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="single-repo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="containerbuild.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
