@@ -2,7 +2,7 @@
 
 Beta quality stuff, which hasn't seen production use, and is pretty hackily thrown together.
 
-# Introduction & Installation
+# Introduction
 
 Pull Reqer is grab bag of tools, both client and server side
 for setting implementing a pull request like feature usable on the command line
