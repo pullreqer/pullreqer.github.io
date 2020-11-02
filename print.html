@@ -319,7 +319,7 @@ we'll mirror a <code>repo</code> manifest, and set up a mirror so that our pull-
 <p>Add the following to your <code>~/.config/manifest-tool/projects/default.env</code></p>
 <pre><code>ssh localhost create_pr_repo ${remote_name}/${project_name} &lt;/dev/null
 GIT_DIR=&quot;$(basename -s .git ${project_name}).git&quot; git remote add mine ssh://localhost/~/${remote_name}/${project_name}
-GIT_DIR=&quot;$(basename -s .git ${project_name}).git&quot; git push mine --mirror
+GIT_DIR=&quot;$(basename -s .git ${project_name}).git&quot; git push --all mine
 </code></pre>
 <p>Rather than performing a checkout into a work tree, <code>--mirror</code> will just download the repositories.  We use manifest-tool to:</p>
 <ul>
