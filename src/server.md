@@ -1,7 +1,7 @@
 # Server components
 
 A git hook implementing the pull request protocol.
-* [pull_req_githook](https://github.com/pullreqers/pull_req_githook)
+* [pullreqr_githook](https://github.com/pullreqr/pullreqr_githook)
 
 Externally provided requirements:
 * [git](git-scm.com) (at least version 2.29)

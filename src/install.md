@@ -10,7 +10,7 @@ Installation steps,
 ## Step 1
 Building the container.
 ---------
-`pull_req_container/mk_pull_req_container`
+`pullreqr_container/mk_pullreqr_container`
 
 ## Step 2
 Running the container.
@@ -23,8 +23,8 @@ To stop it:
 
 Optionally enable it to start via systemd
 ```
-install -D -t ~/.config/systemd/user/ build/gen_code/pullreqer.service
-systemctl --user enable pullreqer.service --now
+install -D -t ~/.config/systemd/user/ build/gen_code/pullreqr.service
+systemctl --user enable pullreqr.service --now
 ```
 
 ## Step 3

@@ -15,7 +15,7 @@ There are 3 containers
 * Install development tools for rust
 
 #### build
-* Compile git & pull_req_hook
+* Compile git & pullreqr_hook
 
 #### run
 * Generate user keys & account to push to, using git-shell.
