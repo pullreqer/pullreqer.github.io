@@ -180,7 +180,7 @@ usable variants.</p>
 <h1><a class="header" href="#client-components" id="client-components">Client components</a></h1>
 <p>For mirroring remote git-repo repositories, </p>
 <ul>
-<li><a href="https://github.com/pullreqer/manifest-tool">manifest-tool</a></li>
+<li><a href="https://github.com/pullreqr/manifest-tool">manifest-tool</a></li>
 </ul>
 <p>Externally provided utilities:</p>
 <ul>
@@ -190,7 +190,7 @@ usable variants.</p>
 <h1><a class="header" href="#server-components" id="server-components">Server components</a></h1>
 <p>A git hook implementing the pull request protocol.</p>
 <ul>
-<li><a href="https://github.com/pullreqers/pull_req_githook">pull_req_githook</a></li>
+<li><a href="https://github.com/pullreqr/pullreqr_githook">pullreqr_githook</a></li>
 </ul>
 <p>Externally provided requirements:</p>
 <ul>
@@ -202,7 +202,7 @@ usable variants.</p>
 <p>Scripts for building a container with everything needed on
 the server.</p>
 <ul>
-<li><a href="https://github.com/pullreqer/pull_req_container">pull_req_container</a></li>
+<li><a href="https://github.com/pullreqr/pullreqr_container">pullreqr_container</a></li>
 </ul>
 <p>External dependencies:</p>
 <ul>
@@ -219,15 +219,15 @@ the server.</p>
 </ol>
 <h2><a class="header" href="#step-1" id="step-1">Step 1</a></h2>
 <h2><a class="header" href="#building-the-container" id="building-the-container">Building the container.</a></h2>
-<p><code>pull_req_container/mk_pull_req_container</code></p>
+<p><code>pullreqr_container/mk_pullreqr_container</code></p>
 <h2><a class="header" href="#step-2" id="step-2">Step 2</a></h2>
 <p>Running the container.</p>
 <p><code>build/gen_code/git_start.sh</code></p>
 <p>To stop it:</p>
 <p><code>build/gen_code/git_stop.sh</code></p>
 <p>Optionally enable it to start via systemd</p>
-<pre><code>install -D -t ~/.config/systemd/user/ build/gen_code/pullreqer.service
-systemctl --user enable pullreqer.service --now
+<pre><code>install -D -t ~/.config/systemd/user/ build/gen_code/pullreqr.service
+systemctl --user enable pullreqr.service --now
 </code></pre>
 <h2><a class="header" href="#step-3" id="step-3">Step 3</a></h2>
 <h2><a class="header" href="#client-installation" id="client-installation">Client installation</a></h2>
@@ -380,7 +380,7 @@ There are 3 containers</p>
 </ul>
 <h4><a class="header" href="#build" id="build">build</a></h4>
 <ul>
-<li>Compile git &amp; pull_req_hook</li>
+<li>Compile git &amp; pullreqr_hook</li>
 </ul>
 <h4><a class="header" href="#run" id="run">run</a></h4>
 <ul>

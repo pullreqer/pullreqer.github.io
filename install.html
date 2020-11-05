@@ -173,15 +173,15 @@
 </ol>
 <h2><a class="header" href="#step-1" id="step-1">Step 1</a></h2>
 <h2><a class="header" href="#building-the-container" id="building-the-container">Building the container.</a></h2>
-<p><code>pull_req_container/mk_pull_req_container</code></p>
+<p><code>pullreqr_container/mk_pullreqr_container</code></p>
 <h2><a class="header" href="#step-2" id="step-2">Step 2</a></h2>
 <p>Running the container.</p>
 <p><code>build/gen_code/git_start.sh</code></p>
 <p>To stop it:</p>
 <p><code>build/gen_code/git_stop.sh</code></p>
 <p>Optionally enable it to start via systemd</p>
-<pre><code>install -D -t ~/.config/systemd/user/ build/gen_code/pullreqer.service
-systemctl --user enable pullreqer.service --now
+<pre><code>install -D -t ~/.config/systemd/user/ build/gen_code/pullreqr.service
+systemctl --user enable pullreqr.service --now
 </code></pre>
 <h2><a class="header" href="#step-3" id="step-3">Step 3</a></h2>
 <h2><a class="header" href="#client-installation" id="client-installation">Client installation</a></h2>
