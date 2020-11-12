@@ -222,11 +222,11 @@ the server.</p>
 <p><code>pullreqr_container/mk_pullreqr_container</code></p>
 <h2><a class="header" href="#step-2" id="step-2">Step 2</a></h2>
 <p>Running the container.</p>
-<p><code>build/gen_code/git_start.sh</code></p>
+<p><code>build/host_scripts/git_start.sh</code></p>
 <p>To stop it:</p>
-<p><code>build/gen_code/git_stop.sh</code></p>
+<p><code>build/host_scripts/git_stop.sh</code></p>
 <p>Optionally enable it to start via systemd</p>
-<pre><code>install -D -t ~/.config/systemd/user/ build/gen_code/pullreqr.service
+<pre><code>install -D -t ~/.config/systemd/user/ build/host_scripts/pullreqr.service
 systemctl --user enable pullreqr.service --now
 </code></pre>
 <h2><a class="header" href="#step-3" id="step-3">Step 3</a></h2>
