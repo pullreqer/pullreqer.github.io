@@ -15,15 +15,15 @@ Building the container.
 ## Step 2
 Running the container.
 
-`build/gen_code/git_start.sh`
+`build/host_scripts/git_start.sh`
 
 To stop it:
 
-`build/gen_code/git_stop.sh`
+`build/host_scripts/git_stop.sh`
 
 Optionally enable it to start via systemd
 ```
-install -D -t ~/.config/systemd/user/ build/gen_code/pullreqr.service
+install -D -t ~/.config/systemd/user/ build/host_scripts/pullreqr.service
 systemctl --user enable pullreqr.service --now
 ```
 
